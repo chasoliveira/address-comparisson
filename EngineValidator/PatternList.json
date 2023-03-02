@@ -1,0 +1,6 @@
+[
+  { "ReplaceWith": "Avenida ", "Patterns": [ "Av ", "Av. ", "Avnd " ] },
+  { "ReplaceWith": "Rua ", "Patterns": [ "R ", "R. " ] },
+  { "ReplaceWith": "Quadra ", "Patterns": [ "Q ", "Q. ","Qd ", "Qd. " ] },
+  { "ReplaceWith": "Lote ", "Patterns": [ "L ", "Lt ", "Lt. " ] }
+]
