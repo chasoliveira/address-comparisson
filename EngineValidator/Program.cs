@@ -1,18 +1,20 @@
 using EngineValidator;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<ISettingService, SettingService>();
+builder.Services.AddScoped<ISanitize, Sanitize>();
+builder.Services.AddScoped<ISimilarityComparisson, LevenshteinDistance>();
+builder.Services.AddScoped<IValidator, Validator>();
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-app.MapPost("/", handler: (RequestValidate address) =>
+app.MapGet("/", () => "Hello World! This a Address Validator.");
+app.MapPost("/", (
+  [FromServices] IValidator validator,
+  [FromBody] RequestValidate address) =>
 {
-  var result = new Validator().Validate(address.One, address.Two);
+  var result = validator.Validate(address.One, address.Two);
   return TypedResults.Ok(result);
 });
 
 app.Run();
-
-public class RequestValidate{
-  public AddressModel One { get; set; }
-  public AddressModel Two { get; set; }
-}
