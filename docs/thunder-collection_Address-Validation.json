@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Address Validation",
+    "dateExported": "2023-03-06T20:50:40.698Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b009d0c4-6268-4864-8617-52cb85eaea8c",
+            "colId": "1e9a5fcc-d6ea-4c7b-b485-ce9f20c6b418",
+            "containerId": "",
+            "name": "Validate Two Addresses",
+            "url": "http://localhost:5260",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-06T20:50:29.210Z",
+            "modified": "2023-03-06T20:50:29.210Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"One\": {\n    \"Line1\": \"R. Sâo Luis\",\n    \"Line2\": \"Qd 23, Lt 15, Jardim América\",\n    \"Line3\": \"77800999, São Paulo, Brazil\"\n  },\n  \"Two\": {\n    \"Line1\": \"Raua Sâo Luis\",\n    \"Line2\": \"Q 23, Lot 15, Jardim América\",\n    \"Line3\": \"77800999, São Paulo, Brazil\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
